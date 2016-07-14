@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import com.runrong.creditscore.config.DbConfig;
+
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @EnableScheduling
@@ -17,7 +19,7 @@ public class CreditScoreApp {
 
     public static void main(String[] args) throws Exception {
        
-       
+        DbConfig.init();
         logger.info("Config加载完毕~");
         SpringApplication.run(CreditScoreApp.class, args);
     }
