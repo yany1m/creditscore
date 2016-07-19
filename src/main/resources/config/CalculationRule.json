@@ -1,0 +1,113 @@
+{
+    "body": [
+        {
+            "module": "身份信息",
+            "include": [
+                {
+                    "name": "身份证",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "手机",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "邮箱",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "银行卡",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "交易密码",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "学历",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                }
+            ]
+        },
+        {
+            "module": "资产信息",
+            "include": [
+                {
+                    "name": "房产",
+                    "rules": {
+                        "score": 50,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "车产",
+                    "rules": {
+                        "score": 50,
+                        "minScore":0
+                    }
+                }
+            ]
+        },
+        {
+            "module": "履约能力",
+            "include": [
+                {
+                    "name": "工作",
+                    "rules": {
+                        "score": 25,
+                        "minScore":0
+                    }
+                },
+                {
+                    "name": "投资记录",
+                    "rules": {
+                        "score": 125,
+                        "minScore":0
+                    }
+                }
+            ]
+        },
+        {
+            "module": "信用历史",
+            "include": [
+                {
+                    "name": "借款记录",
+                    "rules": {
+                        "score": 100,
+                        "minScore":-80
+                    }
+                }
+            ]
+        },
+         {
+            "module": "行为偏好",
+            "include": [
+                {
+                    "name": "用户活跃度",
+                    "rules": {
+                        "score": 5,
+                        "minScore":0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -6,14 +6,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import javax.servlet.http.HttpServlet;
 import javax.sql.DataSource;
 
+import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
 
 @Configuration
 public class DbConfig {
@@ -78,6 +81,17 @@ public class DbConfig {
     public NamedParameterJdbcTemplate namedParameterJdbcTemplate(){
         NamedParameterJdbcTemplate namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource());
         return namedParameterJdbcTemplate;
+    }
+    
+    @Bean
+    public ServletRegistrationBean druidStatRegistration(){
+        HttpServlet servlet = new StatViewServlet();
+        ServletRegistrationBean registration = new ServletRegistrationBean(servlet);
+        registration.addUrlMappings("/druid/*");
+        registration.addInitParameter("loginUsername","admin");
+        registration.addInitParameter("loginPassword","12345");
+        //registration.addInitParameter("allow","192.168.0.1/16");
+        return registration;
     }
 
 }
