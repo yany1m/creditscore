@@ -53,6 +53,7 @@ public class CreditController {
 		
 		List<Map> list=new ArrayList<Map>();
 		
+		//接收各个模块处理过后的数据
 		list.add(identityInfoService.CountScore(accountId));
 		list.add(assetsInfoService.CountScore(accountId));
 		list.add(performanceAbilityService.CountScore(accountId));
