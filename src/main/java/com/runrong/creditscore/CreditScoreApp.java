@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
 import com.runrong.creditscore.config.DbConfig;
 import com.runrong.creditscore.config.RuleConfig;
 
@@ -19,7 +18,6 @@ public class CreditScoreApp {
 	private static Logger logger = LoggerFactory.getLogger(CreditScoreApp.class);
 
     public static void main(String[] args) throws Exception {
-       
         DbConfig.init();
         RuleConfig.init();
         logger.info("Config加载完毕~");
